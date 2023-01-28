@@ -18,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,7 +51,7 @@ fun LoginForm() {
         modifier = Modifier.padding(8.dp)
     ) {
         Text(
-            text = "Login",
+            text = stringResource(R.string.title),
             color = MaterialTheme.colors.primary,
             fontSize = 28.sp,
             modifier = Modifier.padding(start = 14.dp, top = 12.dp, bottom = 14.dp),
@@ -58,7 +59,7 @@ fun LoginForm() {
         OutlinedTextField(
             value = username,
             onValueChange = { username = it },
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.username)) },
             singleLine = true,
             modifier = Modifier
                 .fillMaxWidth()
@@ -67,14 +68,14 @@ fun LoginForm() {
             trailingIcon = {
                 Icon(
                     imageVector = Icons.Default.Email,
-                    contentDescription = "Email Icon"
+                    contentDescription = stringResource(R.string.email_icon)
                 )
             },
         )
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             singleLine = true,
             modifier = Modifier
                 .fillMaxWidth()
@@ -84,7 +85,7 @@ fun LoginForm() {
             trailingIcon = {
                 Icon(
                     imageVector = Icons.Default.Lock,
-                    contentDescription = "Lock Icon"
+                    contentDescription = stringResource(R.string.lock_icon)
                 )
             },
         )
@@ -93,7 +94,7 @@ fun LoginForm() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Submit",
+                text = stringResource(R.string.submit),
                 fontSize = 17.sp,
             )
         }
